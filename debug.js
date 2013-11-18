@@ -34,9 +34,12 @@ function debug(name) {
       fmt = '%c ' + fmt;
       args = Array.prototype.slice.call(arguments);
       args.splice(1, 0, debug.color(name));
+    }
 
-      // add lineNumber
-      var stack = new Error().stack.split('\n');
+    // add lineNumber
+    var stack = new Error().stack;
+    if (typeof stack !== 'undefined') {
+      stack = stack.split('\n');
       var lineNumber = stack[2];
       if (lineNumber.indexOf('(') !== - 1) {
         lineNumber = lineNumber.substring(lineNumber.lastIndexOf('(')+1,lineNumber.lastIndexOf(')'));
