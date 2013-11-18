@@ -25,8 +25,9 @@ function debug(name) {
     debug[name] = curr;
 
 
-    fmt = name
-      + ' '
+    fmt = '@'
+      + name
+      + ' -> '
       + fmt
       + ' +' + debug.humanize(ms);
 

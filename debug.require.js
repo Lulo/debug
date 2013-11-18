@@ -26,8 +26,9 @@ define(function(require, exports, module) {
       debug[name] = curr;
 
 
-      fmt = name
-        + ' '
+      fmt = '@'
+        + name
+        + ' -> '
         + fmt
         + ' +' + debug.humanize(ms);
 
