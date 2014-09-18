@@ -40,7 +40,7 @@ define(function(require, exports, module) {
 
       // add lineNumber
       var stack = new Error().stack;
-      if (typeof stack !== 'undefined') {
+      if (typeof stack !== 'undefined' && typeof args !== 'undefined') {
         stack = stack.split('\n');
         var lineNumber = stack[2];
         if (lineNumber.indexOf('(') !== - 1) {
