@@ -25,7 +25,6 @@ define(function(require, exports, module) {
       var ms = curr - (debug[name] || curr);
       debug[name] = curr;
 
-
       fmt = '@'
         + name
         + ' -> '
@@ -34,7 +33,11 @@ define(function(require, exports, module) {
 
       if (debug.colorSupport)  {
         fmt = '%c ' + fmt;
-        args = Array.prototype.slice.call(arguments);
+      }
+
+      args = Array.prototype.slice.call(arguments);
+
+      if (debug.colorSupport)  {
         args.splice(1, 0, debug.color(name));
       }
 
